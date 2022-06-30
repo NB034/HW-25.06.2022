@@ -177,6 +177,7 @@ void BinaryTree<T1, T2>::deleteNode(node<T1, T2>* obj, const T1& key) {
 		else
 			this->root = nullptr;
 		delete obj;
+		this->size--;
 		return;
 	}
 	node<T1, T2>* suitableNode = this->min(obj->right);
@@ -192,6 +193,7 @@ void BinaryTree<T1, T2>::deleteNode(node<T1, T2>* obj, const T1& key) {
 		else
 			this->root = obj->right;
 		delete obj;
+		this->size--;
 		return;
 	}
 	obj->key = suitableNode->key;
